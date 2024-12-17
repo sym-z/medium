@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgv5opifufu4d"]
+[gd_scene load_steps=7 format=3 uid="uid://bgv5opifufu4d"]
 
 [ext_resource type="Script" path="res://scripts/add_media.gd" id="1_vrbsr"]
 [ext_resource type="Texture2D" uid="uid://dbv2v24xjrovc" path="res://sprites/bg-beta.png" id="1_vrsm7"]
 [ext_resource type="Theme" uid="uid://xta2k2ya6wgx" path="res://themes/main_menu_buttons.tres" id="2_t0nb6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gghr"]
+
+[sub_resource type="Theme" id="Theme_b345t"]
+default_font_size = 64
+SpinBox/icons/updown = null
+
+[sub_resource type="Theme" id="Theme_muicv"]
+default_font_size = 64
 
 [node name="Add Media" type="Control" node_paths=PackedStringArray("titleField", "artistField", "yearField", "ratingField")]
 layout_mode = 3
@@ -60,16 +67,20 @@ theme_override_font_sizes/font_size = 64
 placeholder_text = "Artist"
 alignment = 1
 
-[node name="Year" type="LineEdit" parent="Panel/VBoxContainer"]
+[node name="Year" type="SpinBox" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-placeholder_text = "Year"
+theme = SubResource("Theme_b345t")
+min_value = 1900.0
+max_value = 2030.0
+value = 1900.0
+rounded = true
 alignment = 1
 
-[node name="Rating" type="LineEdit" parent="Panel/VBoxContainer"]
+[node name="Rating" type="SpinBox" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-placeholder_text = "?/5"
+theme = SubResource("Theme_muicv")
+max_value = 5.0
+rounded = true
 alignment = 1
 
 [node name="Add" type="Button" parent="Panel/VBoxContainer"]
