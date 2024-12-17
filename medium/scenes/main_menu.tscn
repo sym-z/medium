@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d313thg1h0icf"]
+[gd_scene load_steps=5 format=3 uid="uid://d313thg1h0icf"]
 
 [ext_resource type="Texture2D" uid="uid://dbv2v24xjrovc" path="res://sprites/bg-beta.png" id="1_7wnob"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_g3674"]
 [ext_resource type="Theme" uid="uid://xta2k2ya6wgx" path="res://themes/main_menu_buttons.tres" id="2_qah5t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46t7i"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -11,6 +14,7 @@ offset_right = 1280.0
 offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g3674")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background Image" type="TextureRect" parent="."]
@@ -19,36 +23,50 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_7wnob")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_46t7i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -466.0
+offset_top = -366.0
+offset_right = 466.0
+offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Add" type="Button" parent="VBoxContainer"]
+[node name="Add" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_qah5t")
-text = "Add Media"
+text = "Add"
 
-[node name="View" type="Button" parent="VBoxContainer"]
+[node name="View" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_qah5t")
-text = "View Library"
+text = "Library"
 
-[node name="Stats" type="Button" parent="VBoxContainer"]
+[node name="Stats" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_qah5t")
 text = "Stats"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_qah5t")
 text = "Options"
+
+[connection signal="button_up" from="Panel/VBoxContainer/Add" to="." method="_on_add_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/View" to="." method="_on_view_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/Stats" to="." method="_on_stats_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/Options" to="." method="_on_options_button_up"]

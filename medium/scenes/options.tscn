@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://mc5c8dgfx0nu"]
+
+[ext_resource type="Texture2D" uid="uid://dbv2v24xjrovc" path="res://sprites/bg-beta.png" id="1_2rqbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7pyt"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background Image" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2rqbn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m7pyt")

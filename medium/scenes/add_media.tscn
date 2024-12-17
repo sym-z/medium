@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgv5opifufu4d"]
+
+[ext_resource type="Script" path="res://scripts/add_media.gd" id="1_vrbsr"]
+[ext_resource type="Texture2D" uid="uid://dbv2v24xjrovc" path="res://sprites/bg-beta.png" id="1_vrsm7"]
+[ext_resource type="Theme" uid="uid://xta2k2ya6wgx" path="res://themes/main_menu_buttons.tres" id="2_t0nb6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gghr"]
+
+[node name="Add Media" type="Control" node_paths=PackedStringArray("titleField", "artistField", "yearField", "ratingField")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrbsr")
+titleField = NodePath("Panel/VBoxContainer/Title")
+artistField = NodePath("Panel/VBoxContainer/Artist")
+yearField = NodePath("Panel/VBoxContainer/Year")
+ratingField = NodePath("Panel/VBoxContainer/Rating")
+
+[node name="Background Image" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vrsm7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1gghr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -248.0
+offset_right = 397.5
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Title"
+alignment = 1
+
+[node name="Artist" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Artist"
+alignment = 1
+
+[node name="Year" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Year"
+alignment = 1
+
+[node name="Rating" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "?/5"
+alignment = 1
+
+[node name="Add" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_t0nb6")
+text = "Add"
+
+[connection signal="button_up" from="Panel/VBoxContainer/Add" to="." method="_on_add_button_up"]
