@@ -6,11 +6,11 @@ class Album:
 	var artist : String
 	var year : int
 	var rating : int
-	func _init(tit : String = "?",art:String = "?",yr:int = -1,rate:int = -1) -> void:
-		title = tit
-		artist = art
-		year = yr
-		rating = rate
+	func _init(arr : Array[String]) -> void:
+		title = arr[0]
+		artist = arr[1]
+		year = arr[2] as int
+		rating = arr[3] as int
 		# TODO: Parse out the genres from the string, and add them to genres[]
 		
 	func debugPrint():
@@ -20,8 +20,12 @@ class Album:
 		print("RATING: ", rating)
 		# TODO: Iterate and print out genres
 
-func createAlbum(title : String = "unknown",artist:String = "unknown",year:int = 0,rating:int = 0) -> void:
-	var album = Album.new(title,artist,year,rating)
+func createAlbum(arr : Array[String]) -> void:
+	var album = Album.new(arr)
 	albumLibrary.append(album)
+	# TODO: WRITE TO CSV
 	print("Album Added!")
-	album.debugPrint()
+	
+func debugAlbumLibrary():
+	for album in albumLibrary:
+		album.debugPrint()

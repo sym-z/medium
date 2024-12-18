@@ -19,3 +19,7 @@ func _on_options_button_up() -> void:
 	call_deferred("toAddScene")
 func toOptionsScene() -> void:
 	get_tree().change_scene_to_file("res://scenes/options.tscn")
+
+func _ready():
+	Utils.parseAlbumCsv("res://data/data.csv")
+	Library.debugAlbumLibrary()
