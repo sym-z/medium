@@ -27,6 +27,7 @@ yearField = NodePath("Panel/VBoxContainer/Year")
 ratingField = NodePath("Panel/VBoxContainer/Rating")
 
 [node name="Background Image" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_vrsm7")

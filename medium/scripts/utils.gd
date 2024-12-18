@@ -10,8 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 # Could refactor this to be generalized
-func parseAlbumCsv(filePath : String) -> Array:
-	var data = []
+func parseAlbumCsv(filePath : String):
 	var file = FileAccess.open(filePath,FileAccess.READ)
 	# Grab Header
 	var header = file.get_csv_line()
@@ -21,4 +20,3 @@ func parseAlbumCsv(filePath : String) -> Array:
 		# Make an Album per line
 		Library.createAlbum(content)
 		content = file.get_csv_line()
-	return data
