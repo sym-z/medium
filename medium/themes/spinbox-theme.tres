@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://bvc0vos6uy22u"]
+
+[resource]
+default_font_size = 64
+SpinBox/icons/updown = null

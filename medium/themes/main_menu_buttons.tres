@@ -4,11 +4,16 @@
 [ext_resource type="StyleBox" uid="uid://ci54pwbg7rwy2" path="res://themes/main-menu-button-stylebox.tres" id="2_nr7k3"]
 
 [resource]
-Button/colors/font_color = Color(0.760784, 0.764706, 0.780392, 1)
-Button/colors/font_hover_color = Color(0, 0.529412, 0.317647, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0.894118, 0.211765, 1)
-Button/colors/font_pressed_color = Color(0, 0.894118, 0.211765, 1)
+default_font = ExtResource("1_bh14k")
+Button/colors/font_color = Color(0.0196078, 0.105882, 0.172549, 1)
+Button/colors/font_focus_color = Color(0.0196078, 0.105882, 0.172549, 1)
+Button/colors/font_hover_color = Color(0.545098, 0.784314, 0.996078, 1)
+Button/colors/font_hover_pressed_color = Color(0.545098, 0.784314, 0.996078, 1)
+Button/colors/font_outline_color = Color(0.545098, 0.784314, 0.996078, 1)
+Button/colors/font_pressed_color = Color(0.0196078, 0.105882, 0.172549, 1)
+Button/constants/outline_size = 16
 Button/font_sizes/font_size = 128
 Button/fonts/font = ExtResource("1_bh14k")
+Button/styles/focus = ExtResource("2_nr7k3")
 Button/styles/hover = ExtResource("2_nr7k3")
 Button/styles/normal = ExtResource("2_nr7k3")

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://di7aj6yk4fbpo"]
+
+[ext_resource type="FontFile" uid="uid://ccf4yjbcxvi6w" path="res://fonts/JetBrainsMono-Bold.ttf" id="1_oifh8"]
+[ext_resource type="StyleBox" uid="uid://q2nyov7hjf2i" path="res://themes/line-edit-stylebox.tres" id="2_2x3r3"]
+
+[resource]
+LineEdit/colors/font_color = Color(0.545098, 0.784314, 0.996078, 1)
+LineEdit/colors/font_outline_color = Color(0.0196078, 0.105882, 0.172549, 1)
+LineEdit/colors/font_placeholder_color = Color(0.545098, 0.784314, 0.996078, 1)
+LineEdit/constants/outline_size = 32
+LineEdit/font_sizes/font_size = 64
+LineEdit/fonts/font = ExtResource("1_oifh8")
+LineEdit/styles/normal = ExtResource("2_2x3r3")
